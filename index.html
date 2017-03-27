@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<meta charset="utf-8" />
+		<title>PHP-AJAX学习</title>
+		<script src="functions.js"></script>
+	</head>
+	
+	<body>
+		<h1><a href="index.html" style="text-decoration: none">Asm.Def的PHP-AJAX学习</a></h1>
+		
+		<div class="guide">
+			<ul>
+				<li><button onclick="display_page('articles.html','display_box')">留言板</button></li>
+				<li><button onclick="display_page('users.html','display_box')">用户列表</button></li>
+				<li><button id="login" onclick="display_page('login.html','display_box')">
+						<script>
+							var uname = getCookie("uname");
+							if(uname === null || uname === "") document.write("登录/注册");
+							else {
+								document.write(uname);
+								document.getElementById("login").onclick = "display_page('user/profile.php','display_box)";
+							}
+						</script>
+					</button>
+			</ul>
+		</div>
+		
+		<div class="display" id="display_box">
+			<h1>Hello <script>
+				if(uname === null || uname === "") document.write("World!");
+				else document.write(uname);
+				</script>
+			</h1>
+		</div>
+
+	</body>
+	
+</html>
